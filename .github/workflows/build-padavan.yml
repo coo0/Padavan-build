@@ -6,7 +6,7 @@ on:
     inputs:
       production:
         description: 设置编译的固件型号,空格分隔.
-        default: "RM2100 MI-R4A R2100 K2P"
+        default: "RM2100 NEWIFI3"
         required: false
       release:
         description: "是否需要发布到Release? (不发布也可以到Artifacts下载)"
@@ -73,7 +73,7 @@ jobs:
         
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/vipshmily/Padavan-KVR.git ${{ env.DIR }}
+        git clone --depth=1 https://github.com/yuos-bit/Padavan.git ${{ env.DIR }}
         cd ${{ env.DIR }}/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
